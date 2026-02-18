@@ -1,35 +1,106 @@
-@import './base.css';
+@import 'tailwindcss';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
+* {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background-color: #F8F8F8;
+}
+
+/* off-white de base, mais sections gérées individuellement */
+.glow-green {
+  background-image: radial-gradient(circle at 30% 40%, #C6FF00 0%, transparent 60%);
+}
+
+.pill-black {
+  background-color: #0A0A0A;
+  color: #F8F8F8;
+  border-radius: 9999px;
+  padding: 0.2rem 1rem;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.pill-outline {
+  border: 1px solid #0A0A0A;
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  transition: 0.2s;
+}
+
+.pill-outline:hover {
+  background: #0A0A0A;
+  color: #F8F8F8;
+}
+
+.skill-card {
+  background-color: #1a1a1a;
+  /* gris foncé */
+  border-radius: 24px;
   padding: 2rem;
-  font-weight: normal;
+  transition: transform 0.2s ease;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+.skill-card:hover {
+  transform: translateY(-4px);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.card-highlight {
+  background-color: #C6FF00;
+  color: #0A0A0A;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.card-highlight .read-more {
+  color: #0A0A0A;
+  font-weight: 600;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.arrow-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  border: 1px solid #888;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #F8F8F8;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.arrow-circle:hover {
+  border-color: #C6FF00;
+  color: #C6FF00;
+}
+
+.badge {
+  border: 1px solid #888;
+  border-radius: 9999px;
+  padding: 0.3rem 1.2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  color: #F8F8F8;
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  border-radius: 32px;
+  padding: 2rem;
+  transition: all 0.2s;
+}
+
+.project-card:hover {
+  background-color: #222;
+}
+
+.read-more {
+  color: #C6FF00;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
