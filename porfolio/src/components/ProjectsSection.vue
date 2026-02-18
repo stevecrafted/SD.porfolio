@@ -21,9 +21,25 @@
           <p class="mb-6" :class="project.highlight ? 'text-[#0A0A0A] opacity-80' : 'text-[#888]'">
             {{ project.description }}
           </p>
-          <a href="#" class="inline-flex items-center gap-2 font-semibold" :class="project.highlight ? 'text-[#0A0A0A]' : 'text-[#C6FF00]'">
-            Read More <i class="fas fa-arrow-right text-sm"></i>
-          </a>
+          
+          
+          <!-- Projet details -->
+           <div class="mt-6 flex flex-wrap gap-3">
+  <a
+    v-for="(link, idx) in project.links"
+    :key="idx"
+    :href="link.url"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition"
+    :class="project.highlight 
+      ? 'border-[#0A0A0A] text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#C6FF00]' 
+      : 'border-[#C6FF00] text-[#C6FF00] hover:bg-[#C6FF00] hover:text-[#0A0A0A]'"
+  >
+    <i :class="link.icon" class="text-base"></i>
+    {{ link.label }}
+  </a>
+</div>
         </div>
       </div>
 

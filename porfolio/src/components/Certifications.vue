@@ -19,10 +19,10 @@
             <span class="text-[#C6FF00] font-semibold text-lg">HackerRank</span>
           </div>
           <h3 class="text-3xl font-bold text-[#F8F8F8] mb-2">
-            Software Engineer Certificate
+            Certificat Ingénieur Logiciel
           </h3>
           <p class="text-[#888] text-lg mb-1">
-            RAJOTOMALALA Stevens Daniel Fanambinana
+            RAKOTOMALALA Stevens Daniel Fanambinana
           </p>
           <p class="text-[#888] mb-4">
             Obtenu le 18 février 2026 · ID: 814100395F8B

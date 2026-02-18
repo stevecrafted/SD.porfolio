@@ -4,16 +4,16 @@
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
         <div>
           <div class="border border-[#888] rounded-full px-4 py-1 text-sm uppercase tracking-wide inline-block mb-6">
-            Why Choose me
+            Pourquoi me choisir
           </div>
           <h2 class="text-6xl md:text-7xl font-bold leading-[1.1]">
-            My Extensive<br>List of Skills
+            Ma liste complète<br>de compétences
           </h2>
         </div>
         <div class="text-right max-w-sm">
           <p class="text-[#888] text-lg">
-            Java/Spring, React, Node.js, DevOps, IA/Data. 
-            Stack propre et scalable.
+            Java/Spring, React, Node.js, DevOps, IA/Data.
+            Stack propre et évolutif.
           </p>
           <div class="flex gap-4 mt-6 justify-end">
             <div class="w-14 h-14 rounded-full border border-[#888] flex items-center justify-center hover:border-[#C6FF00] hover:text-[#C6FF00] transition cursor-pointer">
