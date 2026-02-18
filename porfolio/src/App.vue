@@ -5,6 +5,7 @@
     <SkillsSection />
     <ProjectsSection />
     <Certifications />
+    <VisitCounter />
     <Footer />
   </div>
 </template>
@@ -15,5 +16,6 @@ import HeroSection from './components/HeroSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import Certifications from './components/Certifications.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
+import VisitCounter from './components/VisitCounter.vue'
 import Footer from './components/Footer.vue'
 </script>

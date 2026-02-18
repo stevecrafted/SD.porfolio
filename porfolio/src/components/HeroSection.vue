@@ -15,7 +15,7 @@
 
       <p class="text-[#888] max-w-lg text-lg md:text-xl mt-8 leading-relaxed">
         RAKOTOMALALA Stevens · basé à Madagascar <br>
-        IT University, lauréat Ideathon Axian ESTI · recherche stage fin d’études.
+        IT University · recherche stage fin d’études.
       </p>
 
       <div class="mt-10">

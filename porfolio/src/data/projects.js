@@ -2,7 +2,7 @@ export const projects = [
   {
     title: 'Orienta',
     description: 'Plateforme emploi/formation IA · Next.js / Spring Boot',
-    highlight: false,
+    highlight: true,
     links: [
       { url: 'https://github.com/stevecrafted/orienta', label: 'GitHub', icon: 'fab fa-github' },
       { url: 'https://orienta-519a.vercel.app', label: 'Démo', icon: 'fas fa-external-link-alt' },
@@ -12,7 +12,7 @@ export const projects = [
   {
     title: 'Framework Java',
     description: 'Framework Spring-like avec IoC & annotations',
-    highlight: true,
+    highlight: false,
     links: [
       { url: 'https://github.com/stevecrafted/FRAMEWORK', label: 'GitHub', icon: 'fab fa-github' }
     ]
