@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stevens RAKOTOMALALA · fullstack developer</title>
+    <!-- Inter font (sans-serif moderne) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- Tailwind (via CDN) + custom layer -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 (gratuit) pour icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        body { background-color: #F8F8F8; } /* off-white de base, mais sections gérées individuellement */
+        .glow-green {
+            background-image: radial-gradient(circle at 30% 40%, #C6FF00 0%, transparent 60%);
+        }
+        .pill-black {
+            background-color: #0A0A0A;
+            color: #F8F8F8;
+            border-radius: 9999px;
+            padding: 0.2rem 1rem;
+            display: inline-block;
+            font-weight: 700;
+        }
+        .pill-outline {
+            border: 1px solid #0A0A0A;
+            border-radius: 9999px;
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            transition: 0.2s;
+        }
+        .pill-outline:hover {
+            background: #0A0A0A;
+            color: #F8F8F8;
+        }
+        .skill-card {
+            background-color: #1a1a1a; /* gris foncé */
+            border-radius: 24px;
+            padding: 2rem;
+            transition: transform 0.2s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-4px);
+        }
+        .card-highlight {
+            background-color: #C6FF00;
+            color: #0A0A0A;
+        }
+        .card-highlight .read-more {
+            color: #0A0A0A;
+            font-weight: 600;
+        }
+        .arrow-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 9999px;
+            border: 1px solid #888;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #F8F8F8;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .arrow-circle:hover {
+            border-color: #C6FF00;
+            color: #C6FF00;
+        }
+        .badge {
+            border: 1px solid #888;
+            border-radius: 9999px;
+            padding: 0.3rem 1.2rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            color: #F8F8F8;
+        }
+        .project-card {
+            background-color: #1a1a1a;
+            border-radius: 32px;
+            padding: 2rem;
+            transition: all 0.2s;
+        }
+        .project-card:hover {
+            background-color: #222;
+        }
+        .read-more {
+            color: #C6FF00;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVBAR (minimaliste, centrée) -->
+    <nav class="w-full py-6 px-6 md:px-12 flex items-center justify-between bg-[#F8F8F8]">
+        <div class="text-2xl font-bold text-[#0A0A0A]">S.R.</div>
+        
+        <div class="hidden md:flex space-x-10 text-[#0A0A0A] font-medium">
+            <a href="#" class="hover:underline">Home</a>
+            <a href="#skills" class="hover:underline">About</a>
+            <a href="#projects" class="hover:underline">Portfolio</a>
+            <a href="#footer" class="hover:underline">Blog</a>
+        </div>
+
+        <button class="pill-outline flex items-center gap-2 text-[#0A0A0A]">
+            <span>Start Project</span> <i class="fas fa-arrow-right text-sm"></i>
+        </button>
+    </nav>
+
+    <!-- HERO SECTION (fond blanc cassé + glow vert) -->
+    <section class="relative w-full py-20 md:py-28 px-6 md:px-12 overflow-hidden bg-[#F8F8F8]">
+        <!-- glow -->
+        <div class="absolute inset-0 glow-green opacity-40 pointer-events-none"></div>
+        
+        <div class="relative max-w-6xl mx-auto">
+            
+            <!-- Titre massif avec blocs noirs -->
+            <h1 class="text-7xl md:text-8xl lg:text-9xl font-extrabold text-[#0A0A0A] leading-[1.1]">
+                <span class="block">Fullstack</span>
+                <span class="block flex items-center flex-wrap gap-4 mt-2">
+                    <span>Developer</span>
+                    <span class="pill-black text-4xl md:text-6xl px-8 py-2">Student</span>
+                </span>
+                <span class="block mt-2 text-6xl md:text-7xl">& AI enthusiast</span>
+            </h1>
+
+            <!-- sous‑texte gris + largeur limitée -->
+            <p class="text-[#888] max-w-lg text-lg md:text-xl mt-8 leading-relaxed">
+                RAKOTOMALALA Stevens · based in Madagascar <br>
+                IT University· recherche stage fin d’études.
+            </p>
+
+            <!-- CTA bouton outline avec téléphone -->
+            <div class="mt-10">
+                <button class="pill-outline flex items-center gap-3 text-[#0A0A0A] border-2 text-lg px-8 py-4">
+                    <i class="fas fa-phone-alt"></i> Contact me
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION (fond noir profond) -->
+    <section id="skills" class="w-full bg-[#0A0A0A] py-24 px-6 md:px-12 text-[#F8F8F8]">
+        <div class="max-w-6xl mx-auto">
+            <!-- en‑tête: badge + titre + flèches -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+                <div>
+                    <div class="badge mb-6">Why Choose me</div>
+                    <h2 class="text-6xl md:text-7xl font-bold leading-[1.1]">
+                        My Extensive<br>List of Skills
+                    </h2>
+                </div>
+                <div class="text-right max-w-sm">
+                    <p class="text-[#888] text-lg">
+                        Java/Spring, React, Node.js, DevOps, IA/Data. 
+                        Stack propre et scalable.
+                    </p>
+                    <!-- flèches rondes (dummy) -->
+                    <div class="flex gap-4 mt-6 justify-end">
+                        <div class="arrow-circle"><i class="fas fa-arrow-left"></i></div>
+                        <div class="arrow-circle"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- grille de compétences (sous forme de blocs/cartes) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20">
+                <!-- Backend -->
+                <div class="skill-card">
+                    <h3 class="text-2xl font-bold mb-3 text-[#C6FF00]">Backend</h3>
+                    <p class="text-[#F8F8F8] opacity-80">Java/Spring Boot · Node.js · .NET · Laravel · Python</p>
+                </div>
+                <!-- Frontend -->
+                <div class="skill-card">
+                    <h3 class="text-2xl font-bold mb-3 text-[#C6FF00]">Frontend</h3>
+                    <p class="text-[#F8F8F8] opacity-80">React · Vue · Next.js · TS · Tailwind</p>
+                </div>
+                <!-- DevOps / cloud -->
+                <div class="skill-card">
+                    <h3 class="text-2xl font-bold mb-3 text-[#C6FF00]">DevOps</h3>
+                    <p class="text-[#F8F8F8] opacity-80">Git · Docker · Vercel · Render · Koyeb · Supabase</p>
+                </div>
+                <!-- Bases de données -->
+                <div class="skill-card">
+                    <h3 class="text-2xl font-bold mb-3 text-[#C6FF00]">Databases</h3>
+                    <p class="text-[#F8F8F8] opacity-80">PostgreSQL · MySQL · MongoDB</p>
+                </div>
+                <!-- IA / Data -->
+                <div class="skill-card card-highlight !bg-[#C6FF00] text-[#0A0A0A]">
+                    <h3 class="text-2xl font-bold mb-3">IA & Data</h3>
+                    <p class="opacity-80">OpenAI · Gemini · Scraping · Pandas · Scikit-learn</p>
+                </div>
+                <!-- Langues / soft skills -->
+                <div class="skill-card">
+                    <h3 class="text-2xl font-bold mb-3 text-[#C6FF00]">Langues</h3>
+                    <p class="opacity-80">Malagasy (nat.) · Français avancé · Anglais intermédiaire</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETS / SERVICES (fond noir, cartes) -->
+    <section id="projects" class="w-full bg-[#0A0A0A] py-24 px-6 md:px-12 border-t border-[#222]">
+        <div class="max-w-6xl mx-auto">
+            <!-- petit badge + titre minimal -->
+            <div class="badge mb-6">Réalisations récentes</div>
+            <h2 class="text-5xl md:text-6xl font-bold text-[#F8F8F8] mb-16">
+                Projets<span class="text-[#C6FF00]">.</span>
+            </h2>
+
+            <!-- grille de cartes projets (6 projets) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Orienta -->
+                <div class="project-card">
+                    <h3 class="text-3xl font-bold text-[#F8F8F8] mb-3">Orienta</h3>
+                    <p class="text-[#888] mb-6">Typescript/Spring-boot · plateforme emploi/formation IA.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right text-sm"></i></a>
+                </div>
+                <!-- Pong Chess -->
+                <div class="project-card">
+                    <h3 class="text-3xl font-bold text-[#F8F8F8] mb-3">Pong Chess</h3>
+                    <p class="text-[#888] mb-6">C# .NET Windows Forms · jeu multi 2D en ligne.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right text-sm"></i></a>
+                </div>
+                <!-- Framework Java (perso) -->
+                <div class="project-card card-highlight !bg-[#C6FF00]">
+                    <h3 class="text-3xl font-bold text-[#0A0A0A] mb-3">Framework Java</h3>
+                    <p class="text-[#0A0A0A] opacity-80 mb-6">Spring-like avec IoC & annotations, framework personnel.</p>
+                    <a href="#" class="read-more text-[#0A0A0A] font-semibold">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <!-- Taxi_brousse -->
+                <div class="project-card">
+                    <h3 class="text-3xl font-bold text-[#F8F8F8] mb-3">Taxi_brousse</h3>
+                    <p class="text-[#888] mb-6">API Spring Boot · réservation taxi-brousse Madagascar.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right text-sm"></i></a>
+                </div>
+                <!-- BACK_OFFICE -->
+                <div class="project-card">
+                    <h3 class="text-3xl font-bold text-[#F8F8F8] mb-3">BACK_OFFICE</h3>
+                    <p class="text-[#888] mb-6">Java pur + framework perso · démo d’architecture.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right text-sm"></i></a>
+                </div>
+                <!-- Prediction_loyer -->
+                <div class="project-card">
+                    <h3 class="text-3xl font-bold text-[#F8F8F8] mb-3">Prediction_loyer</h3>
+                    <p class="text-[#888] mb-6">Python Flask · ML (scikit-learn) prédiction foncière.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right text-sm"></i></a>
+                </div>
+            </div>
+
+            <!-- ligne expérience (hackathons) en petites cartes supplémentaires -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="border border-[#333] rounded-3xl p-6 bg-[#111]">
+                    <p class="text-[#C6FF00] font-semibold text-sm">2024 · DevPost</p>
+                    <h4 class="text-white text-xl font-bold mt-1">Visaverse AI Hackathon</h4>
+                    <p class="text-[#888] mt-2">Fullstack TS/Spring Boot · intégration OpenAI, Gemini. 95% précision.</p>
+                </div>
+                <div class="border border-[#333] rounded-3xl p-6 bg-[#111]">
+                    <p class="text-[#C6FF00] font-semibold text-sm">2024 · DevFest</p>
+                    <h4 class="text-white text-xl font-bold mt-1">GreenCraft</h4>
+                    <p class="text-[#888] mt-2">Solution IA pour économie circulaire · backend & défi environnemental.</p>
+                </div>
+                <div class="border border-[#333] rounded-3xl p-6 bg-[#111]">
+                    <p class="text-[#C6FF00] font-semibold text-sm">2024 · ESTI</p>
+                    <h4 class="text-white text-xl font-bold mt-1">Ideathon Axian ESTI</h4>
+                    <p class="text-[#888] mt-2">1ʳᵉ place (20 équipes) · conception projet IA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT · LANGUES · LOISIRS (fond blanc cassé) -->
+    <footer id="footer" class="bg-[#F8F8F8] text-[#0A0A0A] py-20 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- coordonnées -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">RAKOTOMALALA Stevens</h3>
+                    <ul class="space-y-2 text-[#333]">
+                        <li><i class="fas fa-phone-alt w-6 text-[#C6FF00]"></i> +261 38 074 9655</li>
+                        <li><i class="fas fa-envelope w-6 text-[#C6FF00]"></i> stevens.rakotomalala@gmail.com</li>
+                        <li><i class="fab fa-linkedin w-6 text-[#C6FF00]"></i> /in/steve-daniel-5b02922bb</li>
+                        <li><i class="fab fa-github w-6 text-[#C6FF00]"></i> stevecrafted</li>
+                    </ul>
+                </div>
+                <!-- formations -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Formation</h3>
+                    <p class="font-semibold">IT University · Licence Informatique</p>
+                    <p class="text-[#555]">2024 – aujourd’hui</p>
+                    <p class="font-semibold mt-4">ESTI Antanimena · Informatique</p>
+                    <p class="text-[#555]">2023 – 2024</p>
+                </div>
+                <!-- langues & loisirs -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Langues & loisirs</h3>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-[#0A0A0A] text-[#F8F8F8] rounded-full px-4 py-1 text-sm">Malagasy (langue M.)</span>
+                        <span class="bg-[#0A0A0A] text-[#F8F8F8] rounded-full px-4 py-1 text-sm">Français avancé</span>
+                        <span class="bg-[#0A0A0A] text-[#F8F8F8] rounded-full px-4 py-1 text-sm">Anglais intermédiaire</span>
+                    </div>
+                    <div class="flex gap-4 text-2xl">
+                        <span class="border-2 border-[#0A0A0A] rounded-full w-14 h-14 flex items-center justify-center"><i class="fas fa-gamepad"></i></span>
+                        <span class="border-2 border-[#0A0A0A] rounded-full w-14 h-14 flex items-center justify-center"><i class="fas fa-futbol"></i></span>
+                    </div>
+                    <p class="mt-4 text-[#555]">Jeu vidéo · Football</p>
+                </div>
+            </div>
+            <div class="border-t border-[#ccc] mt-16 pt-8 text-center text-[#555]">
+                <p>© 2025 Stevens RAKOTOMALALA – design minimal & glow vert</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- petit script pour interaction (flèches dummy, console) -->
+    <script>
+        // juste pour montrer que les flèches réagissent (demo)
+        document.querySelectorAll('.arrow-circle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                console.log('navigation skill (dummy)');
+            });
+        });
+        // CTA contact alert
+        document.querySelector('.pill-outline.flex.items-center.gap-3')?.addEventListener('click', ()=>{
+            alert('📬 Contact : stevens.rakotomalala@gmail.com');
+        });
+        // empêcher les liens vides de recharger
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            link.addEventListener('click', (e) => e.preventDefault());
+        });
+    </script>
+</body>
+</html>
