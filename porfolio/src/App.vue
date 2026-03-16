@@ -18,4 +18,5 @@ import Certifications from './components/Certifications.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import VisitCounter from './components/VisitCounter.vue'
 import Footer from './components/Footer.vue'
+
 </script>
