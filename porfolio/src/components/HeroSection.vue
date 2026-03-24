@@ -8,7 +8,7 @@
         <span class="block">Développeur</span>
         <span class="block flex items-center flex-wrap gap-4 mt-2">
           <span>Fullstack</span>
-          <span class="bg-[#0A0A0A] text-[#F8F8F8] rounded-full px-8 py-2 text-4xl md:text-6xl">Étudiant</span>
+           
         </span>
         <span class="block mt-2 text-6xl md:text-7xl">& passionné d'IA</span>
       </h1>
