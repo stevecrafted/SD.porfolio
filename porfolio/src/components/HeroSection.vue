@@ -14,7 +14,7 @@
 
       <p class="text-[#888] max-w-lg text-lg md:text-xl mt-8 leading-relaxed">
         RAKOTOMALALA Stevens · basé à Madagascar <br>
-        IT University · recherche stage fin d’études.
+        IT University  
       </p>
 
       <div class="mt-10">
