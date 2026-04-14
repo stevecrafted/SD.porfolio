@@ -2,10 +2,25 @@ import { ref } from 'vue'
 
 const SUPPORTED_LOCALES = ['fr', 'en']
 
+function extractLocaleFromPath(pathname) {
+  const match = pathname.match(/^\/(fr|en)(?=\/|$)/)
+  return match ? match[1] : null
+}
+
+function stripLocaleFromPath(pathname) {
+  const strippedPath = pathname.replace(/^\/(fr|en)(?=\/|$)/, '')
+  return strippedPath || '/'
+}
+
+function buildLocalizedPath(nextLocale, pathname) {
+  const neutralPath = stripLocaleFromPath(pathname)
+  return neutralPath === '/' ? `/${nextLocale}` : `/${nextLocale}${neutralPath}`
+}
+
 function resolveLocale() {
-  const urlLocale = new URLSearchParams(window.location.search).get('lang')
-  if (SUPPORTED_LOCALES.includes(urlLocale)) {
-    return urlLocale
+  const pathLocale = extractLocaleFromPath(window.location.pathname)
+  if (SUPPORTED_LOCALES.includes(pathLocale)) {
+    return pathLocale
   }
 
   const storedLocale = window.localStorage.getItem('site-locale')
@@ -280,7 +295,8 @@ function updateHtmlLang(nextLocale) {
 
 function updateUrlLocale(nextLocale) {
   const url = new URL(window.location.href)
-  url.searchParams.set('lang', nextLocale)
+  url.pathname = buildLocalizedPath(nextLocale, url.pathname)
+  url.search = ''
   window.history.replaceState({}, '', url.toString())
 }
 

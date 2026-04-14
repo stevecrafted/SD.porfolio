@@ -1,5 +1,15 @@
 import { messages } from './i18n'
 
+function stripLocaleFromPath(pathname) {
+  const strippedPath = pathname.replace(/^\/(fr|en)(?=\/|$)/, '')
+  return strippedPath || '/'
+}
+
+function buildLocalizedPath(nextLocale, pathname) {
+  const neutralPath = stripLocaleFromPath(pathname)
+  return neutralPath === '/' ? `/${nextLocale}` : `/${nextLocale}${neutralPath}`
+}
+
 function upsertMeta(attribute, key, content) {
   let node = document.head.querySelector(`meta[${attribute}="${key}"]`)
 
@@ -40,14 +50,16 @@ function upsertAlternateLang(hreflang, href) {
 export function applyGlobalSeo(locale) {
   const baseUrl = window.location.origin
   const currentPath = window.location.pathname
-  const currentUrl = `${baseUrl}${currentPath}?lang=${locale}`
+  const currentUrl = `${baseUrl}${buildLocalizedPath(locale, currentPath)}`
+  const frUrl = `${baseUrl}${buildLocalizedPath('fr', currentPath)}`
+  const enUrl = `${baseUrl}${buildLocalizedPath('en', currentPath)}`
   const seo = messages[locale]?.seo ?? messages.fr.seo
 
   document.title = seo.title
   upsertCanonical(currentUrl)
-  upsertAlternateLang('fr', `${baseUrl}${currentPath}?lang=fr`)
-  upsertAlternateLang('en', `${baseUrl}${currentPath}?lang=en`)
-  upsertAlternateLang('x-default', `${baseUrl}${currentPath}?lang=fr`)
+  upsertAlternateLang('fr', frUrl)
+  upsertAlternateLang('en', enUrl)
+  upsertAlternateLang('x-default', frUrl)
   upsertMeta('property', 'og:locale', seo.ogLocale)
 
   upsertMeta('name', 'description', seo.description)
