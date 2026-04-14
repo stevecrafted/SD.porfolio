@@ -6,7 +6,7 @@ export const projects = [
     links: [
       { url: 'https://github.com/stevecrafted/orienta', label: 'GitHub', icon: 'fab fa-github' },
       { url: 'https://orienta-519a.vercel.app', label: 'Démo', icon: 'fas fa-external-link-alt' },
-      { url: 'https://devpost.com/software/orienta', label: 'Devpost', icon: 'fab fa-dev' }
+      { url: 'https://devpost.com/software/orienta-6e1cb0?ref_content=user-portfolio&ref_feature=in_progress', label: 'Devpost', icon: 'fab fa-dev' }
     ]
   },
   {

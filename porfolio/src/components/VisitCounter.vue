@@ -3,17 +3,19 @@
     v-if="showCounter"
     class="fixed bottom-4 right-4 bg-[#0A0A0A] text-[#C6FF00] px-4 py-2 rounded-full text-sm font-mono border border-[#C6FF00] z-50 shadow-lg"
   >
-    Visites : {{ count }}
+    {{ copy.counter.visits }} : {{ count }}
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, doc, increment, updateDoc, getDoc, setDoc } from 'firebase/firestore'
+import { locale, messages } from '@/i18n'
 
 const count = ref(0)
 const showCounter = ref(false)
+const copy = computed(() => messages[locale.value] ?? messages.fr)
 
 // 1. Vérifier si l'utilisateur est "admin" via paramètre d'URL
 const isAdmin = () => {
