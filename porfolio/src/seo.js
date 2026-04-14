@@ -1,8 +1,4 @@
-const SEO_DEFAULTS = {
-  title: 'Stevens Rakotomalala | Developpeur Fullstack',
-  description:
-    "Portfolio de Stevens Rakotomalala, developpeur fullstack passionne d'IA. Projets Java, Spring Boot, Vue, React, Node.js, DevOps et Machine Learning.",
-}
+import { messages } from './i18n'
 
 function upsertMeta(attribute, key, content) {
   let node = document.head.querySelector(`meta[${attribute}="${key}"]`)
@@ -28,20 +24,22 @@ function upsertCanonical(url) {
   node.setAttribute('href', url)
 }
 
-export function applyGlobalSeo() {
+export function applyGlobalSeo(locale) {
   const baseUrl = window.location.origin
   const currentUrl = `${baseUrl}${window.location.pathname}`
+  const seo = messages[locale]?.seo ?? messages.fr.seo
 
-  document.title = SEO_DEFAULTS.title
+  document.title = seo.title
   upsertCanonical(currentUrl)
+  upsertMeta('property', 'og:locale', seo.ogLocale)
 
-  upsertMeta('name', 'description', SEO_DEFAULTS.description)
-  upsertMeta('property', 'og:title', SEO_DEFAULTS.title)
-  upsertMeta('property', 'og:description', SEO_DEFAULTS.description)
+  upsertMeta('name', 'description', seo.description)
+  upsertMeta('property', 'og:title', seo.title)
+  upsertMeta('property', 'og:description', seo.description)
   upsertMeta('property', 'og:url', currentUrl)
   upsertMeta('property', 'og:type', 'website')
   upsertMeta('property', 'og:site_name', 'Portfolio de Stevens Rakotomalala')
 
-  upsertMeta('name', 'twitter:title', SEO_DEFAULTS.title)
-  upsertMeta('name', 'twitter:description', SEO_DEFAULTS.description)
+  upsertMeta('name', 'twitter:title', seo.title)
+  upsertMeta('name', 'twitter:description', seo.description)
 }

@@ -4,16 +4,15 @@
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
         <div>
           <div class="border border-[#888] rounded-full px-4 py-1 text-sm uppercase tracking-wide inline-block mb-6">
-            Pourquoi me choisir
+            {{ copy.skills.badge }}
           </div>
           <h2 class="text-6xl md:text-7xl font-bold leading-[1.1]">
-            Ma liste complète<br>de compétences
+            {{ copy.skills.title }}<br>{{ copy.skills.title2 }}
           </h2>
         </div>
         <div class="text-right max-w-sm">
           <p class="text-[#888] text-lg">
-            Java/Spring, React, Node.js, DevOps, IA/Data.
-            Stack propre et évolutif.
+            {{ copy.skills.summary }}
           </p>
           <div class="flex gap-4 mt-6 justify-end">
             <div class="w-14 h-14 rounded-full border border-[#888] flex items-center justify-center hover:border-[#C6FF00] hover:text-[#C6FF00] transition cursor-pointer">
@@ -28,7 +27,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20">
         <div
-          v-for="(skill, index) in skills"
+          v-for="(skill, index) in skillItems"
           :key="index"
           class="rounded-3xl p-8 transition-transform hover:-translate-y-1"
           :class="skill.highlight ? 'bg-[#C6FF00] text-[#0A0A0A]' : 'bg-[#1a1a1a] text-[#F8F8F8]'"
@@ -44,5 +43,9 @@
 </template>
 
 <script setup>
-import { skills } from '@/data/skills'
+import { computed } from 'vue'
+import { locale, messages } from '@/i18n'
+
+const copy = computed(() => messages[locale.value] ?? messages.fr)
+const skillItems = computed(() => copy.value.skills.items)
 </script>
