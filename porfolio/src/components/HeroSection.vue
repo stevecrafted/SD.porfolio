@@ -6,15 +6,15 @@
     <div class="relative max-w-6xl mx-auto">
       <h1 class="text-7xl md:text-8xl lg:text-9xl font-extrabold text-[#0A0A0A] leading-[1.1]">
         <span class="block">{{ copy.hero.line1 }}</span>
-        <span class="block flex items-center flex-wrap gap-4 mt-2">
-          <span>{{ copy.hero.line2 }}</span>
+        <span class="block flex items-center flex-wrap gap-4 mt-2"> 
+          <span>{{ copy.hero.line2 }}</span> 
         </span>
         <span class="block mt-2 text-6xl md:text-7xl">{{ copy.hero.line3 }}</span>
       </h1>
 
-      <p class="text-[#888] max-w-lg text-lg md:text-xl mt-8 leading-relaxed">
+      <p class="text-[#888] max-w-lg text-lg md:text-xl mt-8 leading-relaxed"> 
         {{ copy.hero.subtitle }} <br>
-        {{ copy.hero.school }}
+        {{ copy.hero.school }} 
       </p>
 
       <div class="mt-10">
