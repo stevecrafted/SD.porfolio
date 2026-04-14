@@ -3,12 +3,12 @@
     <div class="max-w-6xl mx-auto">
       <!-- Badge de section -->
       <div class="border border-[#888] rounded-full px-4 py-1 text-sm uppercase tracking-wide inline-block mb-6 text-[#F8F8F8]">
-        Certification
+        {{ copy.certifications.badge }}
       </div>
 
       <!-- Titre -->
       <h2 class="text-5xl md:text-6xl font-bold text-[#F8F8F8] mb-12">
-        Reconnaissance<span class="text-[#C6FF00]">.</span>
+        {{ copy.certifications.title }}<span class="text-[#C6FF00]">.</span>
       </h2>
 
       <!-- Carte certificat -->
@@ -19,13 +19,13 @@
             <span class="text-[#C6FF00] font-semibold text-lg">HackerRank</span>
           </div>
           <h3 class="text-3xl font-bold text-[#F8F8F8] mb-2">
-            Certificat Ingénieur Logiciel
+            {{ copy.certifications.certTitle }}
           </h3>
           <p class="text-[#888] text-lg mb-1">
-            RAKOTOMALALA Stevens Daniel Fanambinana
+            {{ copy.certifications.owner }}
           </p>
           <p class="text-[#888] mb-4">
-            Obtenu le 18 février 2026 · ID: 814100395F8B
+            {{ copy.certifications.dateLine }}
           </p>
           <a
             :href="certLink"
@@ -33,7 +33,7 @@
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 text-[#C6FF00] font-semibold hover:underline"
           >
-            Voir le certificat <i class="fas fa-external-link-alt text-sm"></i>
+            {{ copy.certifications.open }} <i class="fas fa-external-link-alt text-sm"></i>
           </a>
         </div>
 
@@ -49,5 +49,9 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { locale, messages } from '@/i18n'
+
+const copy = computed(() => messages[locale.value] ?? messages.fr)
 const certLink = 'https://www.hackerrank.com/certificates/814100395f8b'
 </script>

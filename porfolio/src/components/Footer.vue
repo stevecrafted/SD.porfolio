@@ -12,29 +12,36 @@
           </ul>
         </div>
         <div>
-          <h3 class="text-2xl font-bold mb-4">Formation</h3>
-          <p class="font-semibold">IT University · Licence Informatique</p>
-          <p class="text-[#555]">2024 – aujourd’hui</p>
-          <p class="font-semibold mt-4">ESTI Antanimena · Informatique</p>
-          <p class="text-[#555]">2023 – 2024</p>
+          <h3 class="text-2xl font-bold mb-4">{{ copy.footer.education }}</h3>
+          <p class="font-semibold">{{ copy.footer.uni1 }}</p>
+          <p class="text-[#555]">{{ copy.footer.uni1date }}</p>
+          <p class="font-semibold mt-4">{{ copy.footer.uni2 }}</p>
+          <p class="text-[#555]">{{ copy.footer.uni2date }}</p>
         </div>
         <div>
-          <h3 class="text-2xl font-bold mb-4">Langues & loisirs</h3>
+          <h3 class="text-2xl font-bold mb-4">{{ copy.footer.languagesHobbies }}</h3>
           <div class="flex flex-wrap gap-2 mb-6">
-            <span class="bg-[#0A0A0A] text-[#F8F8F8] rounded-full px-4 py-1 text-sm">Malagasy (langue M.)</span>
-            <span class="bg-[#0A0A0A] text-[#F8F8F8] rounded-full px-4 py-1 text-sm">Français avancé</span>
-            <span class="bg-[#0A0A0A] text-[#F8F8F8] rounded-full px-4 py-1 text-sm">Anglais intermédiaire</span>
+            <span class="bg-[#0A0A0A] text-[#F8F8F8] rounded-full px-4 py-1 text-sm">{{ copy.footer.lang1 }}</span>
+            <span class="bg-[#0A0A0A] text-[#F8F8F8] rounded-full px-4 py-1 text-sm">{{ copy.footer.lang2 }}</span>
+            <span class="bg-[#0A0A0A] text-[#F8F8F8] rounded-full px-4 py-1 text-sm">{{ copy.footer.lang3 }}</span>
           </div>
           <div class="flex gap-4 text-2xl">
             <span class="border-2 border-[#0A0A0A] rounded-full w-14 h-14 flex items-center justify-center"><i class="fas fa-gamepad"></i></span>
             <span class="border-2 border-[#0A0A0A] rounded-full w-14 h-14 flex items-center justify-center"><i class="fas fa-futbol"></i></span>
           </div>
-          <p class="mt-4 text-[#555]">Jeu vidéo · Football</p>
+          <p class="mt-4 text-[#555]">{{ copy.footer.hobbies }}</p>
         </div>
       </div>
       <div class="border-t border-[#ccc] mt-16 pt-8 text-center text-[#555]">
-        <p>© 2025 Stevens RAKOTOMALALA – design minimal & glow vert</p>
+        <p>{{ copy.footer.copyright }}</p>
       </div>
     </div>
   </footer>
 </template>
+
+<script setup>
+import { computed } from 'vue'
+import { locale, messages } from '@/i18n'
+
+const copy = computed(() => messages[locale.value] ?? messages.fr)
+</script>

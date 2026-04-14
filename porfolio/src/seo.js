@@ -24,13 +24,30 @@ function upsertCanonical(url) {
   node.setAttribute('href', url)
 }
 
+function upsertAlternateLang(hreflang, href) {
+  let node = document.head.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`)
+
+  if (!node) {
+    node = document.createElement('link')
+    node.setAttribute('rel', 'alternate')
+    node.setAttribute('hreflang', hreflang)
+    document.head.appendChild(node)
+  }
+
+  node.setAttribute('href', href)
+}
+
 export function applyGlobalSeo(locale) {
   const baseUrl = window.location.origin
-  const currentUrl = `${baseUrl}${window.location.pathname}`
+  const currentPath = window.location.pathname
+  const currentUrl = `${baseUrl}${currentPath}?lang=${locale}`
   const seo = messages[locale]?.seo ?? messages.fr.seo
 
   document.title = seo.title
   upsertCanonical(currentUrl)
+  upsertAlternateLang('fr', `${baseUrl}${currentPath}?lang=fr`)
+  upsertAlternateLang('en', `${baseUrl}${currentPath}?lang=en`)
+  upsertAlternateLang('x-default', `${baseUrl}${currentPath}?lang=fr`)
   upsertMeta('property', 'og:locale', seo.ogLocale)
 
   upsertMeta('name', 'description', seo.description)
