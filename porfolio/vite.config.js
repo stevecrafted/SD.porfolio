@@ -9,6 +9,9 @@ export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
+    prerender({
+      routes: ['/'], // vos routes
+    }),
   ],
   resolve: {
     alias: {
