@@ -36,9 +36,9 @@ export const locale = ref(resolveLocale())
 export const messages = {
   fr: {
     seo: {
-      title: 'Stevens Rakotomalala | Developpeur Fullstack',
+      title: 'Rakotomalala Stevens Daniel Fanambinana | Developpeur Fullstack',
       description:
-        "Portfolio de Stevens Rakotomalala, developpeur fullstack passionne d'IA. Projets Java, Spring Boot, Vue, React, Node.js, DevOps et Machine Learning.",
+        "Portfolio de Rakotomalala Stevens Daniel Fanambinana, developpeur fullstack passionne d'IA. Projets Java, Spring Boot, Vue, React, Node.js, DevOps et Machine Learning.",
       ogLocale: 'fr_FR',
     },
     navbar: {
@@ -156,7 +156,7 @@ export const messages = {
       lang2: 'Francais avance',
       lang3: 'Anglais intermediaire',
       hobbies: 'Jeu video · Football',
-      copyright: '© 2026 Stevens RAKOTOMALALA - design minimal & glow vert',
+      copyright: '© 2026 Rakotomalala Stevens Daniel Fanambinana - design minimal & glow vert',
     },
     counter: {
       visits: 'Visites',
@@ -164,9 +164,9 @@ export const messages = {
   },
   en: {
     seo: {
-      title: 'Stevens Rakotomalala | Fullstack Developer',
+      title: 'Rakotomalala Stevens Daniel Fanambinana | Fullstack Developer',
       description:
-        'Portfolio of Stevens Rakotomalala, fullstack developer passionate about AI. Projects in Java, Spring Boot, Vue, React, Node.js, DevOps, and Machine Learning.',
+        'Portfolio of Rakotomalala Stevens Daniel Fanambinana, fullstack developer passionate about AI. Projects in Java, Spring Boot, Vue, React, Node.js, DevOps, and Machine Learning.',
       ogLocale: 'en_US',
     },
     navbar: {
@@ -281,7 +281,7 @@ export const messages = {
       lang2: 'French advanced',
       lang3: 'English intermediate',
       hobbies: 'Video games · Football',
-      copyright: '© 2026 Stevens RAKOTOMALALA - minimal design & green glow',
+      copyright: '© 2026 Rakotomalala Stevens Daniel Fanambinana - minimal design & green glow',
     },
     counter: {
       visits: 'Visits',

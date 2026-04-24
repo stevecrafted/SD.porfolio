@@ -67,7 +67,7 @@ export function applyGlobalSeo(locale) {
   upsertMeta('property', 'og:description', seo.description)
   upsertMeta('property', 'og:url', currentUrl)
   upsertMeta('property', 'og:type', 'website')
-  upsertMeta('property', 'og:site_name', 'Portfolio de Stevens Rakotomalala')
+  upsertMeta('property', 'og:site_name', 'Portfolio de Rakotomalala Stevens Daniel Fanambinana')
 
   upsertMeta('name', 'twitter:title', seo.title)
   upsertMeta('name', 'twitter:description', seo.description)
