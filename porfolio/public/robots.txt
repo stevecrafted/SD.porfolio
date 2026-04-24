@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://counterporfolio.web.app/sitemap.xml
+Sitemap: https://sd-porfolio.vercel.app/sitemap.xml

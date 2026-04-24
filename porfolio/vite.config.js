@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import prerenderStatic from 'vite-plugin-prerender-static'
 
-const siteUrl = 'https://counterporfolio.web.app'
+const siteUrl = 'https://sd-porfolio.vercel.app'
 
 const projectPages = [
   {
