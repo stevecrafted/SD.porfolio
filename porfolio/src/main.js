@@ -5,4 +5,8 @@ import App from './App.vue'
 
 document.documentElement.setAttribute('lang', 'en')
 
-createApp(App).mount('#app')
+const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/'
+
+if (normalizedPath === '/') {
+	createApp(App).mount('#app')
+}
