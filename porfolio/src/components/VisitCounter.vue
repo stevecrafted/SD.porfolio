@@ -9,8 +9,6 @@
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
-import { initializeApp } from 'firebase/app'
-import { getFirestore, doc, increment, updateDoc, getDoc, setDoc } from 'firebase/firestore'
 import { copy } from '@/content'
 
 const count = ref(0)
@@ -46,6 +44,11 @@ const initCounter = async () => {
   const config = await loadFirebaseConfig()
   if (!config) return
 
+  const [{ initializeApp }, { getFirestore, doc, increment, updateDoc, getDoc, setDoc }] = await Promise.all([
+    import('firebase/app'),
+    import('firebase/firestore'),
+  ])
+
   // Initialiser Firebase
   const app = initializeApp(config)
   const db = getFirestore(app)
@@ -70,9 +73,18 @@ const initCounter = async () => {
 }
 
 onMounted(async () => {
-  await initCounter()
   showCounter.value = isAdmin()
   window.addEventListener('keydown', handleKeydown)
+
+  const loadCounter = () => {
+    void initCounter()
+  }
+
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(loadCounter, { timeout: 2000 })
+  } else {
+    setTimeout(loadCounter, 0)
+  }
 })
 
 onUnmounted(() => {

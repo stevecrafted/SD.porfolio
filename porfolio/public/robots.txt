@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /counterporfolio-firebase.json
 
 Sitemap: https://counterporfolio.web.app/sitemap.xml

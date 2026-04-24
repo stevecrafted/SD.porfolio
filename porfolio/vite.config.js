@@ -117,10 +117,10 @@ const projectRoutes = projectPages.map((project) => ({
 
 const allRoutes = [homeRoute, ...projectRoutes]
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [
     vue(),
-    vueDevTools(),
+    command === 'serve' ? vueDevTools() : null,
     prerenderStatic({
       routes: allRoutes,
       template: 'template.html',
@@ -170,10 +170,10 @@ export default defineConfig({
 </main>`.trim()
       },
     }),
-  ],
+  ].filter(Boolean),
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-})
+}))
