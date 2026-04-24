@@ -1,23 +1,7 @@
 <template>
   <nav class="w-full py-6 px-6 md:px-12 flex items-center justify-between bg-[#F8F8F8]">
     <div class="text-2xl font-bold text-[#0A0A0A]">S.R.</div>
-    <div class="flex space-x-3 text-[#0A0A0A] font-medium">
-      <button
-        @click="setLocale('fr')"
-        class="border rounded-full px-4 py-2 text-sm transition"
-        :class="locale === 'fr' ? 'bg-[#0A0A0A] text-[#F8F8F8] border-[#0A0A0A]' : 'border-[#0A0A0A] text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#F8F8F8]'"
-      >
-        FR
-      </button>
-      <button
-        @click="setLocale('en')"
-        class="border rounded-full px-4 py-2 text-sm transition"
-        :class="locale === 'en' ? 'bg-[#0A0A0A] text-[#F8F8F8] border-[#0A0A0A]' : 'border-[#0A0A0A] text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#F8F8F8]'"
-      >
-        EN
-      </button>
-    </div>
- 
+
       <a
         href="/stevens_CV.pdf"
         target="_blank"
@@ -31,8 +15,5 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { locale, messages, setLocale } from '@/i18n'
-
-const copy = computed(() => messages[locale.value] ?? messages.fr)
+import { copy } from '@/content'
 </script>

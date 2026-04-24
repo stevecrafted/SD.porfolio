@@ -30,12 +30,9 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { locale, messages } from '@/i18n'
-
-const copy = computed(() => messages[locale.value] ?? messages.fr)
+import { copy } from '@/content'
 
 const contactMe = () => {
-  alert(copy.value.hero.contactAlert)
+  alert(copy.hero.contactAlert)
 }
 </script>

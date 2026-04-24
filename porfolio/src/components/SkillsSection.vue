@@ -43,9 +43,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { locale, messages } from '@/i18n'
+import { copy } from '@/content'
 
-const copy = computed(() => messages[locale.value] ?? messages.fr)
-const skillItems = computed(() => copy.value.skills.items)
+const skillItems = copy.skills.items
 </script>

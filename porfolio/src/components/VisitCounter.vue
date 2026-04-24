@@ -8,14 +8,13 @@
 </template>
 
 <script setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, doc, increment, updateDoc, getDoc, setDoc } from 'firebase/firestore'
-import { locale, messages } from '@/i18n'
+import { copy } from '@/content'
 
 const count = ref(0)
 const showCounter = ref(false)
-const copy = computed(() => messages[locale.value] ?? messages.fr)
 
 // 1. Vérifier si l'utilisateur est "admin" via paramètre d'URL
 const isAdmin = () => {
