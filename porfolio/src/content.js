@@ -40,7 +40,6 @@ export const copy = {
         description: 'AI platform for jobs and learning · Next.js / Spring Boot',
         highlight: true,
         links: [
-          { url: '/projects/orienta', label: 'Project Page', icon: 'fas fa-file-alt' },
           { url: 'https://github.com/stevecrafted/orienta', label: 'GitHub', icon: 'fab fa-github' },
           { url: 'https://orienta-519a.vercel.app', label: 'Live Demo', icon: 'fas fa-external-link-alt' },
           {
@@ -55,7 +54,6 @@ export const copy = {
         description: 'Spring-like framework with IoC and annotations',
         highlight: false,
         links: [
-          { url: '/projects/java-framework', label: 'Project Page', icon: 'fas fa-file-alt' },
           { url: 'https://github.com/stevecrafted/FRAMEWORK', label: 'GitHub', icon: 'fab fa-github' },
         ],
       },
@@ -64,7 +62,6 @@ export const copy = {
         description: 'Online multiplayer game in C# .NET',
         highlight: false,
         links: [
-          { url: '/projects/pong-chess', label: 'Project Page', icon: 'fas fa-file-alt' },
           { url: 'https://github.com/stevecrafted/pong_echec', label: 'GitHub', icon: 'fab fa-github' },
         ],
       },
@@ -73,7 +70,6 @@ export const copy = {
         description: 'Spring Boot API for intercity taxi booking',
         highlight: false,
         links: [
-          { url: '/projects/taxi-brousse', label: 'Project Page', icon: 'fas fa-file-alt' },
           { url: 'https://github.com/stevecrafted/Taxi_brousse', label: 'GitHub', icon: 'fab fa-github' },
         ],
       },
@@ -82,7 +78,6 @@ export const copy = {
         description: 'Pure Java + custom framework',
         highlight: false,
         links: [
-          { url: '/projects/back-office', label: 'Project Page', icon: 'fas fa-file-alt' },
           { url: 'https://github.com/stevecrafted/BACK_OFFICE', label: 'GitHub', icon: 'fab fa-github' },
         ],
       },
@@ -91,7 +86,6 @@ export const copy = {
         description: 'Python ML (Flask) for property rent prediction',
         highlight: false,
         links: [
-          { url: '/projects/rent-prediction', label: 'Project Page', icon: 'fas fa-file-alt' },
           { url: 'https://github.com/stevecrafted/Prediction_loyer', label: 'GitHub', icon: 'fab fa-github' },
         ],
       },

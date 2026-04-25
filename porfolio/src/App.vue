@@ -1,12 +1,20 @@
 <template>
   <div class="bg-[#F8F8F8]">
     <Navbar />
-    <HeroSection />
-    <SkillsSection />
-    <ProjectsSection />
-    <Certifications />
-    <VisitCounter />
-    <Footer />
+    <main>
+      <HeroSection />
+      <section class="cv-auto">
+        <SkillsSection />
+      </section>
+      <section class="cv-auto">
+        <ProjectsSection />
+      </section>
+      <section class="cv-auto">
+        <Certifications />
+      </section>
+      <VisitCounter />
+      <Footer />
+    </main>
   </div>
 </template>
 
@@ -20,3 +28,10 @@ import VisitCounter from './components/VisitCounter.vue'
 import Footer from './components/Footer.vue'
 
 </script>
+
+<style scoped>
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+</style>

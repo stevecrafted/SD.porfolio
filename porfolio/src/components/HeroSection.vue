@@ -34,8 +34,11 @@
             src="/me.png"
             alt="Portrait of Rakotomalala Stevens Daniel Fanambinana"
             class="hero-photo"
+            width="440"
+            height="566"
             loading="eager"
             decoding="async"
+            fetchpriority="high"
           >
         </div>
       </div>
