@@ -1,6 +1,6 @@
 {
   "name": "Portfolio of Rakotomalala Stevens Daniel Fanambinana",
-  "short_name": "Stevens",
+  "short_name": "SD",
   "lang": "en",
   "start_url": "/",
   "display": "standalone",
@@ -8,9 +8,9 @@
   "theme_color": "#0A0A0A",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "48x48 32x32 16x16",
-      "type": "image/x-icon"
+      "src": "/sd-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }
